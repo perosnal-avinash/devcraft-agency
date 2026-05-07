@@ -219,7 +219,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Animated cycling word */}
-          <div className="h-[1.25em] flex items-center justify-center overflow-hidden my-1">
+          <div className="h-[3.25em] flex items-center justify-center overflow-hidden my-4">
             <AnimatePresence mode="wait">
               <motion.span
                 key={wordIndex}

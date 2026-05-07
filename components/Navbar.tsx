@@ -56,10 +56,9 @@ const fintechStats = [
 const fintechCerts = ["PCI-DSS", "ISO 27001", "SOC 2", "RBI", "SEBI", "GDPR"];
 
 const otherLinks = [
-  { label: "About",        href: "/about" },
-  { label: "Portfolio",    href: "#portfolio" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact",      href: "/contact" },
+  { label: "About",     href: "/about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contact",   href: "/contact" },
 ];
 
 const dropdownVariants = {
