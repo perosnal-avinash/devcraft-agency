@@ -50,7 +50,7 @@ const LinkedInIcon = () => (
 const socials = [
   { icon: TwitterIcon, href: "https://twitter.com/devcraft", label: "Twitter / X" },
   { icon: LinkedInIcon, href: "https://linkedin.com/company/devcraft", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:infra@paymeindia.in", label: "Email" },
+  { icon: Mail, href: "mailto:hell@gamil.com", label: "Email" },
 ];
 
 export default function Footer() {

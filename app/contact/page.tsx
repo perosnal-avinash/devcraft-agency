@@ -15,10 +15,10 @@ const contactMethods = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "infra@paymeindia.in",
+    value: "hell@gamil.com",
     sub: "We reply within 24 hours",
     gradient: "from-indigo-500 to-purple-600",
-    href: "mailto:infra@paymeindia.in",
+    href: "mailto:hell@gamil.com",
   },
   {
     icon: Phone,
@@ -153,7 +153,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error("Server error");
       setSent(true);
     } catch {
-      setSubmitError("Something went wrong. Please email us directly at infra@paymeindia.in");
+      setSubmitError("Something went wrong. Please email us directly at hell@gamil.com");
     } finally {
       setLoading(false);
     }

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "infra@paymeindia.in" },
+  { icon: Mail, label: "Email", value: "hell@gamil.com" },
   { icon: Phone, label: "Phone", value: "+91 98765 43210" },
   { icon: MapPin, label: "Location", value: "India & Remote Worldwide" },
 ];
