@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Code2, Mail } from "lucide-react";
+import { Code2, Mail, Twitter, Linkedin } from "lucide-react";
 
 const linkGroups: { section: string; items: { label: string; href: string }[] }[] = [
   {
@@ -36,6 +36,8 @@ const linkGroups: { section: string; items: { label: string; href: string }[] }[
 ];
 
 const socials = [
+  { icon: Twitter, href: "https://twitter.com/devcraft", label: "Twitter / X" },
+  { icon: Linkedin, href: "https://linkedin.com/company/devcraft", label: "LinkedIn" },
   { icon: Mail, href: "mailto:infra@paymeindia.in", label: "Email" },
 ];
 
