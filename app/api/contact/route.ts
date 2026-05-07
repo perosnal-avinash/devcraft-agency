@@ -14,7 +14,6 @@ export async function POST(req: NextRequest) {
   // In development without a script URL, log and return success so the form is testable
   if (!scriptUrl) {
     if (process.env.NODE_ENV === "development") {
-      console.log("[Contact] No GOOGLE_SCRIPT_URL set — form data:", data);
       return NextResponse.json({ success: true, dev: true });
     }
     return NextResponse.json({ error: "Submission endpoint not configured" }, { status: 503 });
