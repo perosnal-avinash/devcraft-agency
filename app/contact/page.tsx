@@ -15,10 +15,10 @@ const contactMethods = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@devcraft.io",
+    value: "infra@paymeindia.in",
     sub: "We reply within 24 hours",
     gradient: "from-indigo-500 to-purple-600",
-    href: "mailto:hello@devcraft.io",
+    href: "mailto:infra@paymeindia.in",
   },
   {
     icon: Phone,
@@ -153,7 +153,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error("Server error");
       setSent(true);
     } catch {
-      setSubmitError("Something went wrong. Please email us directly at hello@devcraft.io");
+      setSubmitError("Something went wrong. Please email us directly at infra@paymeindia.in");
     } finally {
       setLoading(false);
     }

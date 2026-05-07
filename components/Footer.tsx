@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Code2, X, Link2, Globe, Mail } from "lucide-react";
+import { Code2, Mail } from "lucide-react";
 
 const linkGroups: { section: string; items: { label: string; href: string }[] }[] = [
   {
@@ -22,8 +22,6 @@ const linkGroups: { section: string; items: { label: string; href: string }[] }[
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Portfolio", href: "/#portfolio" },
-      { label: "Careers", href: "#" },
-      { label: "Press Kit", href: "#" },
     ],
   },
   {
@@ -38,10 +36,7 @@ const linkGroups: { section: string; items: { label: string; href: string }[] }[
 ];
 
 const socials = [
-  { icon: Globe, href: "#", label: "Website" },
-  { icon: X, href: "#", label: "Twitter / X" },
-  { icon: Link2, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "#", label: "Email" },
+  { icon: Mail, href: "mailto:infra@paymeindia.in", label: "Email" },
 ];
 
 export default function Footer() {

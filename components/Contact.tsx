@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { Send, Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@devcraft.io" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 000-1234" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA & Remote Worldwide" },
+  { icon: Mail, label: "Email", value: "infra@paymeindia.in" },
+  { icon: Phone, label: "Phone", value: "+91 98765 43210" },
+  { icon: MapPin, label: "Location", value: "India & Remote Worldwide" },
 ];
 
 const services = [
