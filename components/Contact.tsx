@@ -114,8 +114,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-6 lg:space-y-8"
+            className="lg:col-span-2 flex flex-col"
           >
+            <div className="space-y-6 lg:space-y-8">
             {contactInfo.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -132,9 +133,10 @@ export default function Contact() {
                 </div>
               );
             })}
+            </div>
 
             {/* CTA box */}
-            <div className="glass rounded-2xl p-6 border border-indigo-500/20 mt-8">
+            <div className="glass rounded-2xl p-6 border border-indigo-500/20 mt-8 lg:mt-auto">
               <h3 className="text-lg font-bold text-white mb-2">Free Consultation</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Book a 30-min discovery call with our team. We'll review your requirements,
@@ -155,7 +157,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 flex flex-col"
           >
             {sent ? (
               <motion.div
@@ -191,7 +193,7 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="glass rounded-2xl p-5 sm:p-8 space-y-5"
+                className="glass rounded-2xl p-5 sm:p-8 space-y-5 flex-1"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
