@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Send, Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
+import BookingModal from "@/components/BookingModal";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "info@cameeto.com" },
@@ -23,6 +24,7 @@ const services = [
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -61,6 +63,7 @@ export default function Contact() {
   };
 
   return (
+    <>
     <section id="contact" className="py-24 px-6 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
@@ -117,7 +120,10 @@ export default function Contact() {
                 Book a 30-min discovery call with our team. We'll review your requirements,
                 answer questions, and outline next steps — no commitment required.
               </p>
-              <button className="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold text-sm hover:opacity-90 transition-opacity cursor-pointer">
+              <button
+                onClick={() => setBookingOpen(true)}
+                className="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold text-sm hover:opacity-90 transition-opacity cursor-pointer"
+              >
                 Schedule a Call
               </button>
             </div>
@@ -284,5 +290,10 @@ export default function Contact() {
         </div>
       </div>
     </section>
+
+      <AnimatePresence>
+        {bookingOpen && <BookingModal onClose={() => setBookingOpen(false)} />}
+      </AnimatePresence>
+    </>
   );
 }
