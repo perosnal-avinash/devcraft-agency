@@ -216,7 +216,7 @@ const sections = [
         {p("For any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Data Protection Officer:")}
         {ul([
           "Email: info@cameeto.com",
-          "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
+          "Postal: CameeTo Agency, Anthurium, Plot No. 3, Sector 73, Noida – 201301, Uttar Pradesh, India",
           "Phone: +91 98765 43210 (Mon–Fri, 9 AM – 7 PM IST)",
         ])}
         {p("We take all privacy enquiries seriously and will respond within 30 business days.")}

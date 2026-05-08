@@ -166,7 +166,7 @@ const sections = [
         {p("If you have questions about our use of cookies or this policy, please contact us:")}
         {ul([
           "Email: info@cameeto.com",
-          "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
+          "Postal: CameeTo Agency, Anthurium, Plot No. 3, Sector 73, Noida – 201301, Uttar Pradesh, India",
         ])}
       </>
     ),

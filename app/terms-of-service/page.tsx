@@ -188,7 +188,7 @@ const sections = [
       <>
         {p("These Terms of Service shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.")}
         {h("Dispute Resolution")}
-        {p("Before initiating formal proceedings, both parties agree to attempt to resolve any dispute through good-faith negotiation for at least 30 days. If negotiation fails, disputes shall be resolved through binding arbitration under the Arbitration and Conciliation Act, 1996, with a single arbitrator appointed by mutual agreement. The seat of arbitration shall be Bangalore, Karnataka.")}
+        {p("Before initiating formal proceedings, both parties agree to attempt to resolve any dispute through good-faith negotiation for at least 30 days. If negotiation fails, disputes shall be resolved through binding arbitration under the Arbitration and Conciliation Act, 1996, with a single arbitrator appointed by mutual agreement. The seat of arbitration shall be Noida, Uttar Pradesh.")}
         {p("Notwithstanding the above, either party may seek injunctive or equitable relief in any competent court where necessary to prevent irreparable harm.")}
       </>
     ),
@@ -219,7 +219,7 @@ const sections = [
         {p("For questions about these Terms of Service, please contact:")}
         {ul([
           "Email: info@cameeto.com",
-          "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
+          "Postal: CameeTo Agency, Anthurium, Plot No. 3, Sector 73, Noida – 201301, Uttar Pradesh, India",
           "Phone: +91 98765 43210",
         ])}
       </>

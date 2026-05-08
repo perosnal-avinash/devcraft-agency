@@ -72,7 +72,7 @@ const sections = [
           <div>
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Party A (CameeTo)</p>
             <p className="text-sm text-slate-300">
-              <strong>CameeTo Agency</strong>, a company registered in India, having its principal place of business at Koramangala, Bangalore – 560034, Karnataka, India (<strong>"CameeTo"</strong>); and
+              <strong>CameeTo Agency</strong>, a company registered in India, having its principal place of business at Anthurium, Plot No. 3, Sector 73, Noida – 201301, Uttar Pradesh, India (<strong>"CameeTo"</strong>); and
             </p>
           </div>
           <div className="border-t border-white/10 pt-3">
@@ -177,7 +177,7 @@ const sections = [
     content: (
       <>
         <Clause number="11" title="Governing Law">
-          {p("This Agreement shall be governed by and construed in accordance with the laws of India. Any disputes arising under this Agreement shall be subject to the exclusive jurisdiction of the courts of Bangalore, Karnataka, India.")}
+          {p("This Agreement shall be governed by and construed in accordance with the laws of India. Any disputes arising under this Agreement shall be subject to the exclusive jurisdiction of the courts of Noida, Uttar Pradesh, India.")}
         </Clause>
         <Clause number="12" title="Entire Agreement">
           {p("This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior and contemporaneous agreements, representations, and understandings of the Parties relating to confidentiality.")}
