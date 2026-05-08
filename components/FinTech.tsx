@@ -151,12 +151,12 @@ export default function FinTech() {
           {stats.map((s, i) => (
             <div
               key={i}
-              className="glass rounded-2xl p-5 text-center border border-emerald-500/20 hover:border-emerald-500/50 transition-colors"
+              className="glass rounded-2xl p-3 sm:p-5 text-center border border-emerald-500/20 hover:border-emerald-500/50 transition-colors"
             >
-              <div className="text-3xl font-extrabold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 {s.value}
               </div>
-              <div className="text-sm text-slate-400 mt-1">{s.label}</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1">{s.label}</div>
             </div>
           ))}
         </motion.div>

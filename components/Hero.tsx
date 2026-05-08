@@ -213,7 +213,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-extrabold leading-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight"
           >
             We Build
           </motion.div>
@@ -227,7 +227,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 exit={{ opacity: 0, y: -40, rotateX: 30 }}
                 transition={{ duration: 0.45 }}
-                className="text-5xl md:text-7xl font-extrabold gradient-text inline-block"
+                className="text-3xl sm:text-5xl md:text-7xl font-extrabold gradient-text inline-block"
                 style={{ transformOrigin: "center" }}
               >
                 {words[wordIndex]}
@@ -239,7 +239,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.35 }}
-            className="text-5xl md:text-7xl font-extrabold leading-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight"
           >
             That Drive{" "}
             <span className="relative inline-block">
@@ -308,7 +308,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-3xl mx-auto">
           {stats.map((stat, i) => (
             <StatCard key={i} stat={stat} index={i} />
           ))}

@@ -159,9 +159,9 @@ export default function Portfolio() {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-start justify-between mb-2">
+                  <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <h3 className="text-lg font-bold text-white">{project.title}</h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex-shrink-0">
                       {project.category}
                     </span>
                   </div>
