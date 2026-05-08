@@ -6,7 +6,7 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Rahul Sharma",
-    role: "CTO, FinFlow Technologies",
+    role: "CTO",
     avatar: "RS",
     rating: 5,
     text: "CameeTo delivered our real-time trading platform in 4 months — 2 months ahead of schedule. The code quality was exceptional and the team was communicative throughout. We've scaled to 50,000 DAU without a hitch.",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     name: "Sarah Mitchell",
-    role: "Founder, MediConnect",
+    role: "Founder",
     avatar: "SM",
     rating: 5,
     text: "I was skeptical about outsourcing our healthcare app given HIPAA requirements, but CameeTo handled everything flawlessly. They knew the compliance requirements better than I did. Launched in 3 months, 5-star reviews on App Store.",
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     name: "Priya Nair",
-    role: "Head of Product, ShopNest",
+    role: "Head of Product",
     avatar: "PN",
     rating: 5,
     text: "The 3D product viewer they built increased our conversion rate by 38%. CameeTo brought creative technical ideas we hadn't even thought of. They're not just developers — they're product thinkers.",
@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     name: "James O'Brien",
-    role: "CEO, LogiTrack Systems",
+    role: "CEO",
     avatar: "JO",
     rating: 5,
     text: "We've worked with 3 agencies before. CameeTo is in a different league. They understood our logistics domain deeply, asked the right questions, and built a system that our ops team actually loves using.",
@@ -38,7 +38,7 @@ const testimonials = [
   },
   {
     name: "Ananya Kulkarni",
-    role: "VP Engineering, EduLaunch",
+    role: "VP Engineering",
     avatar: "AK",
     rating: 5,
     text: "They migrated our legacy LMS to a modern stack with zero downtime and zero data loss. The new platform handles 100K concurrent users. The engineering discipline here is world-class.",
@@ -46,7 +46,7 @@ const testimonials = [
   },
   {
     name: "David Chen",
-    role: "Founder, PropVision",
+    role: "Founder",
     avatar: "DC",
     rating: 5,
     text: "The AI model CameeTo built for property valuation has 94% accuracy — better than what large players offer. Their ML team is brilliant, and they explained everything clearly to non-technical stakeholders.",
