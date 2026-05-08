@@ -48,7 +48,7 @@ const sections = [
           "This is a mutual NDA — both parties' confidential information is protected equally",
           "It covers the evaluation period and any resulting engagement",
           "Typical signing time: 15–30 minutes via e-signature",
-          "To request a signed NDA, email legal@cameetoo.com or indicate it in your contact form",
+          "To request a signed NDA, email info@cameeto.com or indicate it in your contact form",
         ])}
       </>
     ),
@@ -251,8 +251,8 @@ const sections = [
       <>
         {p("To request a signed NDA before your project discussion, simply:")}
         {ul([
-          "Email legal@cameetoo.com with subject 'NDA Request — [Your Company Name]'",
-          "Or tick the 'NDA' checkbox on our contact form at cameetoo.com/contact",
+          "Email info@cameeto.com with subject 'NDA Request — [Your Company Name]'",
+          "Or tick the 'NDA' checkbox on our contact form at cameeto.com/contact",
           "We'll send a pre-filled DocuSign link within 24 hours",
           "Once both parties sign, the NDA is in effect immediately",
         ])}

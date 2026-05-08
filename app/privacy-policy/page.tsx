@@ -31,7 +31,7 @@ const sections = [
     title: "Introduction",
     content: (
       <>
-        {p("CameeTo Agency ('CameeTo', 'we', 'us', or 'our') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (cameetoo.com) or engage our services.")}
+        {p("CameeTo Agency ('CameeTo', 'we', 'us', or 'our') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (cameeto.com) or engage our services.")}
         {p("By using our website or services, you agree to the terms of this Privacy Policy. If you do not agree, please discontinue use of our website and services.")}
         {p("This policy applies to all information collected through our website, and any related services, sales, marketing, or events (collectively, the 'Services').")}
       </>
@@ -136,7 +136,7 @@ const sections = [
           "Website analytics data: 26 months (Google Analytics default)",
           "Employee and contractor data: Duration of engagement plus 7 years",
         ])}
-        {p("You may request early deletion of your data at any time (subject to legal retention requirements) by contacting privacy@cameetoo.com.")}
+        {p("You may request early deletion of your data at any time (subject to legal retention requirements) by contacting info@cameeto.com.")}
       </>
     ),
   },
@@ -155,7 +155,7 @@ const sections = [
           "Right to Object: Object to processing based on legitimate interests or for direct marketing",
           "Right to Withdraw Consent: Withdraw consent at any time where processing is consent-based",
         ])}
-        {p("To exercise any of these rights, contact us at privacy@cameetoo.com. We will respond within 30 days. We may need to verify your identity before processing requests.")}
+        {p("To exercise any of these rights, contact us at info@cameeto.com. We will respond within 30 days. We may need to verify your identity before processing requests.")}
       </>
     ),
   },
@@ -184,7 +184,7 @@ const sections = [
     title: "Children's Privacy",
     content: (
       <>
-        {p("Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18. If you become aware that a child has provided us with personal information, please contact us at privacy@cameetoo.com and we will delete such information.")}
+        {p("Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18. If you become aware that a child has provided us with personal information, please contact us at info@cameeto.com and we will delete such information.")}
       </>
     ),
   },
@@ -215,7 +215,7 @@ const sections = [
       <>
         {p("For any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact our Data Protection Officer:")}
         {ul([
-          "Email: privacy@cameetoo.com",
+          "Email: info@cameeto.com",
           "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
           "Phone: +91 98765 43210 (Mon–Fri, 9 AM – 7 PM IST)",
         ])}

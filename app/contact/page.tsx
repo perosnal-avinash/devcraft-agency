@@ -16,10 +16,10 @@ const contactMethods = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "hell@gamil.com",
+    value: "info@cameeto.com",
     sub: "We reply within 24 hours",
     gradient: "from-indigo-500 to-purple-600",
-    href: "mailto:hell@gamil.com",
+    href: "mailto:info@cameeto.com",
   },
   {
     icon: Phone,
@@ -153,7 +153,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error("Server error");
       setSent(true);
     } catch {
-      setSubmitError("Something went wrong. Please email us directly at hell@gamil.com");
+      setSubmitError("Something went wrong. Please email us directly at info@cameeto.com");
     } finally {
       setLoading(false);
     }

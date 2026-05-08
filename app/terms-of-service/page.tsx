@@ -218,7 +218,7 @@ const sections = [
       <>
         {p("For questions about these Terms of Service, please contact:")}
         {ul([
-          "Email: legal@cameetoo.com",
+          "Email: info@cameeto.com",
           "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
           "Phone: +91 98765 43210",
         ])}

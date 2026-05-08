@@ -240,8 +240,8 @@ function PreferencesModal({
             <p>Right to access · Right to correction · Right to erasure · Right to grievance redressal · Right to nominate</p>
             <p>
               To exercise your rights, contact our Data Protection Officer at{" "}
-              <a href="mailto:privacy@cameto.in" className="text-indigo-400 hover:underline">
-                privacy@cameto.in
+              <a href="mailto:info@cameeto.com" className="text-indigo-400 hover:underline">
+                info@cameeto.com
               </a>
             </p>
           </div>
