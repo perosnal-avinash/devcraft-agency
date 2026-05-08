@@ -90,7 +90,7 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -99,7 +99,7 @@ export default function Pricing() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
               whileHover={{ y: -8 }}
-              className={`relative glass rounded-2xl p-8 ${
+              className={`relative glass rounded-2xl p-8 flex flex-col ${
                 plan.popular ? "border border-indigo-500/50 glow-purple" : ""
               }`}
             >
@@ -123,7 +123,7 @@ export default function Pricing() {
               </div>
               <p className="text-slate-500 text-sm mb-6">{plan.tagline}</p>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((f, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm text-slate-300">
                     <Check className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
