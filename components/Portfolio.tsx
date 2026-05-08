@@ -14,9 +14,20 @@ type Project = {
   gradient: string;
   icon: string;
   result: string;
+  url?: string;
 };
 
 const projects = [
+  {
+    title: "DhanWallet – Digital Wallet",
+    category: "Web App",
+    desc: "Full-stack digital wallet platform with UPI payments, wallet top-up via Razorpay, peer-to-peer transfers, transaction history, and a merchant QR dashboard. RBI-compliant KYC flow with Aadhaar & PAN verification.",
+    tech: ["Next.js", "Node.js", "PostgreSQL", "Razorpay", "AWS"],
+    gradient: "from-emerald-500 to-teal-700",
+    icon: "💳",
+    result: "Modern Financial Solutions",
+    url: "https://dhanwallet.in",
+  },
   {
     title: "Kreditzy – Lending Platform",
     category: "Web App",
@@ -199,9 +210,21 @@ export default function Portfolio() {
                     ✦ {(project as Project).result}
                   </span>
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                    <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
-                      <ExternalLink className="w-4 h-4 text-white" />
-                    </button>
+                    {(project as Project).url ? (
+                      <a
+                        href={(project as Project).url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ExternalLink className="w-4 h-4 text-white" />
+                      </a>
+                    ) : (
+                      <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
+                        <ExternalLink className="w-4 h-4 text-white" />
+                      </button>
+                    )}
                     <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
                       <Link2 className="w-4 h-4 text-white" />
                     </button>
