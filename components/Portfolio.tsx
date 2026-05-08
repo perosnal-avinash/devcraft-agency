@@ -6,78 +6,124 @@ import { ExternalLink, Link2 } from "lucide-react";
 
 const categories = ["All", "Web App", "Mobile", "AI/ML", "E-Commerce", "Enterprise"];
 
+type Project = {
+  title: string;
+  category: string;
+  desc: string;
+  tech: string[];
+  gradient: string;
+  icon: string;
+  result: string;
+};
+
 const projects = [
   {
-    title: "FinFlow Dashboard",
+    title: "Kreditzy – Lending Platform",
     category: "Web App",
-    desc: "Real-time financial analytics platform with live data streaming, risk scoring, and multi-portfolio management.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "WebSockets"],
-    gradient: "from-indigo-600 to-purple-700",
-    icon: "📊",
+    desc: "NBFC-grade loan origination system with CIBIL & Experian bureau pulls, video KYC, automated underwriting, and RBI-compliant audit trails. Disbursed ₹500 Cr+ within 8 months of launch.",
+    tech: ["Next.js", "Node.js", "PostgreSQL", "Redis", "AWS"],
+    gradient: "from-indigo-600 to-violet-700",
+    icon: "🏦",
+    result: "₹500 Cr+ disbursed",
   },
   {
-    title: "MediConnect",
-    category: "Mobile",
-    desc: "Telemedicine app connecting 50,000+ patients with doctors. Instant video calls, e-prescriptions, and appointments.",
-    tech: ["React Native", "Node.js", "MongoDB", "WebRTC"],
+    title: "MedPulse – Hospital Management",
+    category: "Enterprise",
+    desc: "End-to-end HMS deployed across 80+ hospitals — OPD/IPD workflows, HL7 FHIR-compliant patient records, pharmacy, billing, and a patient-facing app with appointment booking and teleconsultation.",
+    tech: ["React", "Node.js", "PostgreSQL", "React Native", "AWS"],
     gradient: "from-cyan-600 to-blue-700",
     icon: "🏥",
+    result: "80+ hospitals live",
   },
   {
-    title: "SmartAssist AI",
+    title: "SalesIQ – B2B Intelligence",
     category: "AI/ML",
-    desc: "LLM-powered customer support bot reducing support tickets by 70%. Trains on custom company knowledge base.",
-    tech: ["Python", "LangChain", "OpenAI", "FastAPI"],
+    desc: "AI-powered sales platform with GPT-based lead scoring, intent detection from LinkedIn & web signals, automated outreach sequences, and CRM sync. Improved pipeline conversion by 3.2× for SaaS clients.",
+    tech: ["Next.js", "Python", "OpenAI", "Pinecone", "HubSpot API"],
     gradient: "from-violet-600 to-pink-700",
-    icon: "🤖",
+    icon: "🎯",
+    result: "3.2× pipeline growth",
   },
   {
-    title: "ShopNest Pro",
+    title: "ZeptoShop – Quick Commerce",
     category: "E-Commerce",
-    desc: "Headless commerce platform for luxury brands. 3D product viewer, AR try-on, and personalized recommendations.",
-    tech: ["Next.js", "Shopify", "Stripe", "Three.js"],
+    desc: "10-minute grocery delivery platform with dark store management, 15K+ SKU catalogue, dynamic slot pricing, and a driver app with live route optimisation. Scaled to 25K daily orders in 6 months.",
+    tech: ["Flutter", "Node.js", "MongoDB", "Redis", "Google Maps"],
     gradient: "from-rose-600 to-orange-700",
-    icon: "🛍️",
+    icon: "⚡",
+    result: "25K daily orders",
   },
   {
-    title: "LogiTrack Enterprise",
+    title: "FreightOS – Logistics ERP",
     category: "Enterprise",
-    desc: "Fleet management and logistics ERP for 10,000+ vehicles. Real-time GPS tracking, route optimization, and billing.",
-    tech: ["React", "Go", "Kafka", "PostgreSQL"],
+    desc: "Full-stack freight management for a pan-India logistics company — 3PL billing, GST e-invoicing, FASTag integration, live vehicle tracking across 2,000+ trucks, and automated POD capture via OCR.",
+    tech: ["React", "Go", "Kafka", "PostgreSQL", "Google Maps"],
     gradient: "from-emerald-600 to-teal-700",
     icon: "🚛",
+    result: "2,000+ trucks tracked",
   },
   {
-    title: "HRNest",
-    category: "Enterprise",
-    desc: "Full HRMS with payroll, leave management, performance reviews, and AI-driven hiring recommendations.",
-    tech: ["Vue.js", "Django", "Redis", "Docker"],
-    gradient: "from-amber-600 to-yellow-700",
-    icon: "👥",
-  },
-  {
-    title: "PropVision AI",
-    category: "AI/ML",
-    desc: "Computer vision system for real estate — automatic property valuation from images with 94% accuracy.",
-    tech: ["Python", "PyTorch", "FastAPI", "AWS"],
-    gradient: "from-sky-600 to-indigo-700",
-    icon: "🏠",
-  },
-  {
-    title: "EduLaunch LMS",
+    title: "LearnSphere – EdTech Platform",
     category: "Web App",
-    desc: "Live learning platform with interactive classrooms, AI-adaptive quizzes, and progress analytics for 100K+ students.",
-    tech: ["Next.js", "Node.js", "WebRTC", "MongoDB"],
-    gradient: "from-pink-600 to-violet-700",
+    desc: "Live K-12 learning platform with adaptive quizzes, teacher dashboards, parent progress reports, and recorded content delivery via CDN. Onboarded 90,000 students across 6 states in Year 1.",
+    tech: ["Next.js", "WebRTC", "MongoDB", "Python", "CloudFront"],
+    gradient: "from-amber-600 to-yellow-600",
     icon: "🎓",
+    result: "90K students onboarded",
   },
   {
-    title: "FoodieGo App",
+    title: "ClaimBot – Insurance AI",
+    category: "AI/ML",
+    desc: "Computer-vision pipeline that assesses motor vehicle damage from photos, estimates repair cost, and auto-settles low-value claims without human review. Achieved 87% auto-settlement rate with <2% fraud slip-through.",
+    tech: ["Python", "PyTorch", "FastAPI", "AWS S3", "Kafka"],
+    gradient: "from-sky-600 to-indigo-700",
+    icon: "🛡️",
+    result: "87% auto-settlement",
+  },
+  {
+    title: "RetailEdge – POS & Inventory",
+    category: "Enterprise",
+    desc: "Offline-first retail POS with GST-compliant billing, multi-warehouse inventory, supplier portal, and a Power BI-style analytics dashboard. Deployed across 350+ stores for a fashion retail chain.",
+    tech: ["React", "Electron", "SQLite", "Node.js", "Power BI"],
+    gradient: "from-pink-600 to-rose-700",
+    icon: "🏪",
+    result: "350+ stores deployed",
+  },
+  {
+    title: "GrowthPilot – D2C Analytics",
+    category: "Web App",
+    desc: "Unified analytics dashboard for D2C brands — pulls data from Shopify, Amazon, Flipkart, Meta Ads, and Google Ads into one view with AI-generated insights, cohort analysis, and inventory forecasting.",
+    tech: ["Next.js", "Python", "BigQuery", "dbt", "Metabase"],
+    gradient: "from-teal-600 to-cyan-700",
+    icon: "📈",
+    result: "15+ D2C brands",
+  },
+  {
+    title: "RideX – Ride-Hailing App",
     category: "Mobile",
-    desc: "On-demand food delivery with real-time order tracking, smart restaurant matching, and loyalty rewards.",
-    tech: ["Flutter", "Firebase", "Google Maps", "Stripe"],
+    desc: "Full ride-hailing platform with driver and rider apps, dynamic fare engine, surge pricing, real-time ETA, background location tracking, and in-app UPI & wallet payments. Launched in 3 Tier-2 cities.",
+    tech: ["React Native", "Node.js", "PostgreSQL", "Redis", "Razorpay"],
     gradient: "from-orange-600 to-red-700",
-    icon: "🍕",
+    icon: "🚖",
+    result: "3 cities launched",
+  },
+  {
+    title: "PharmaLink – B2B Marketplace",
+    category: "E-Commerce",
+    desc: "B2B pharma procurement platform connecting 1,200+ chemists with 40+ distributors — live inventory, credit line management, GST purchase orders, and a mobile app for field sales reps.",
+    tech: ["Next.js", "Node.js", "MySQL", "Elasticsearch", "Flutter"],
+    gradient: "from-green-600 to-emerald-700",
+    icon: "💊",
+    result: "1,200+ chemists onboarded",
+  },
+  {
+    title: "TalentHive – Recruitment SaaS",
+    category: "Web App",
+    desc: "AI-assisted ATS with JD-to-candidate matching, automated screening calls via Twilio, interview scheduling, offer letter generation, and HRMS integrations. Used by 60+ companies for high-volume hiring.",
+    tech: ["Next.js", "Python", "OpenAI", "Twilio", "PostgreSQL"],
+    gradient: "from-purple-600 to-violet-700",
+    icon: "👥",
+    result: "60+ companies using",
   },
 ];
 
@@ -145,9 +191,13 @@ export default function Portfolio() {
               >
                 {/* Project header */}
                 <div
-                  className={`h-40 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
+                  className={`h-36 bg-gradient-to-br ${(project as Project).gradient} flex items-center justify-center relative overflow-hidden`}
                 >
-                  <span className="text-6xl">{project.icon}</span>
+                  <span className="text-5xl">{project.icon}</span>
+                  {/* Result badge */}
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-bold bg-black/30 text-white backdrop-blur-sm border border-white/20">
+                    ✦ {(project as Project).result}
+                  </span>
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                     <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer">
                       <ExternalLink className="w-4 h-4 text-white" />
