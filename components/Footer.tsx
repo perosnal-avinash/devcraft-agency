@@ -119,6 +119,13 @@ export default function Footer() {
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} CameeTo. All rights reserved.
           </p>
+          <button
+            onClick={() => (window as unknown as Record<string, () => void>).openConsentManager?.()}
+            className="text-xs text-slate-500 hover:text-indigo-400 transition-colors cursor-pointer flex items-center gap-1.5"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 inline-block" />
+            Manage Cookie Preferences
+          </button>
         </motion.div>
       </div>
     </footer>
