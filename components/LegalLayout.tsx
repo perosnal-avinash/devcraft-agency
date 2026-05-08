@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Code2, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface Section {
   id: string;
@@ -42,11 +43,8 @@ export default function LegalLayout({
           <Link href="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
-              <Code2 className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold gradient-text text-lg">CameeTo</span>
+          <Link href="/">
+            <Image src="/logo.png" alt="CameeTo" width={120} height={34} className="h-8 w-auto" />
           </Link>
           <Link href="/contact" className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity">
             Contact Us
