@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — DevCraft Agency",
-  description: "The terms and conditions governing use of DevCraft's services.",
+  title: "Terms of Service — CameeTo Agency",
+  description: "The terms and conditions governing use of CameeTo's services.",
 };
 
 const p = (text: string) => (
@@ -31,7 +31,7 @@ const sections = [
     title: "Acceptance of Terms",
     content: (
       <>
-        {p("By accessing our website, requesting a proposal, or engaging DevCraft Agency ('DevCraft', 'we', 'us', 'our') for any services, you ('Client', 'you') agree to be bound by these Terms of Service and all applicable laws and regulations.")}
+        {p("By accessing our website, requesting a proposal, or engaging CameeTo Agency ('CameeTo', 'we', 'us', 'our') for any services, you ('Client', 'you') agree to be bound by these Terms of Service and all applicable laws and regulations.")}
         {p("If you do not agree with any of these terms, you are prohibited from using our services. These terms may be updated from time to time; continued use of our services constitutes acceptance of the revised terms.")}
         {p("These Terms of Service form part of, and should be read together with, any project-specific Statement of Work (SOW), Master Service Agreement (MSA), or other agreements signed between the parties.")}
       </>
@@ -42,11 +42,11 @@ const sections = [
     title: "Our Services",
     content: (
       <>
-        {p("DevCraft provides custom software development, design, consulting, and related technology services. The specific scope, timeline, deliverables, and pricing for each engagement are defined in a separate Statement of Work (SOW) or project proposal, which becomes legally binding upon both parties' written agreement.")}
+        {p("CameeTo provides custom software development, design, consulting, and related technology services. The specific scope, timeline, deliverables, and pricing for each engagement are defined in a separate Statement of Work (SOW) or project proposal, which becomes legally binding upon both parties' written agreement.")}
         {h("Service Modifications")}
         {p("We reserve the right to modify, suspend, or discontinue any aspect of our services with reasonable notice. For active project engagements, material changes to scope require written agreement from both parties.")}
         {h("Subcontracting")}
-        {p("DevCraft may engage trusted subcontractors or freelancers to assist in delivering services. We remain responsible for the quality and confidentiality of subcontracted work and ensure all subcontractors are bound by appropriate confidentiality agreements.")}
+        {p("CameeTo may engage trusted subcontractors or freelancers to assist in delivering services. We remain responsible for the quality and confidentiality of subcontracted work and ensure all subcontractors are bound by appropriate confidentiality agreements.")}
       </>
     ),
   },
@@ -63,9 +63,9 @@ const sections = [
           "All prices are exclusive of applicable taxes (GST, VAT, or local equivalents)",
         ])}
         {h("Late Payments")}
-        {p("Invoices not paid within 14 days of the due date will accrue interest at 1.5% per month (18% per annum) on the outstanding balance. DevCraft reserves the right to suspend work on active projects until overdue invoices are settled.")}
+        {p("Invoices not paid within 14 days of the due date will accrue interest at 1.5% per month (18% per annum) on the outstanding balance. CameeTo reserves the right to suspend work on active projects until overdue invoices are settled.")}
         {h("Refunds")}
-        {p("Payments made for work already completed are non-refundable. For prepaid milestones not yet started, refunds may be issued at DevCraft's discretion, less any reasonable administrative costs incurred.")}
+        {p("Payments made for work already completed are non-refundable. For prepaid milestones not yet started, refunds may be issued at CameeTo's discretion, less any reasonable administrative costs incurred.")}
         {h("Dispute Resolution for Invoices")}
         {p("If you dispute an invoice, you must notify us in writing within 7 days of receipt. Undisputed portions of the invoice remain payable on the original due date.")}
       </>
@@ -77,13 +77,13 @@ const sections = [
     content: (
       <>
         {h("Client Ownership")}
-        {p("Upon receipt of full payment, DevCraft assigns to the Client all intellectual property rights in the custom work product specifically created for the Client under the SOW, including source code, designs, and documentation.")}
-        {h("DevCraft IP and Pre-existing Materials")}
-        {p("DevCraft retains ownership of all pre-existing intellectual property, tools, frameworks, libraries, and methodologies used in delivering services ('DevCraft IP'). To the extent DevCraft IP is incorporated into deliverables, DevCraft grants the Client a non-exclusive, perpetual, royalty-free licence to use such DevCraft IP solely as part of the deliverables.")}
+        {p("Upon receipt of full payment, CameeTo assigns to the Client all intellectual property rights in the custom work product specifically created for the Client under the SOW, including source code, designs, and documentation.")}
+        {h("CameeTo IP and Pre-existing Materials")}
+        {p("CameeTo retains ownership of all pre-existing intellectual property, tools, frameworks, libraries, and methodologies used in delivering services ('CameeTo IP'). To the extent CameeTo IP is incorporated into deliverables, CameeTo grants the Client a non-exclusive, perpetual, royalty-free licence to use such CameeTo IP solely as part of the deliverables.")}
         {h("Open Source")}
-        {p("Some deliverables may include open-source software components. Such components remain subject to their respective open-source licences. DevCraft will disclose all open-source components used in a project.")}
+        {p("Some deliverables may include open-source software components. Such components remain subject to their respective open-source licences. CameeTo will disclose all open-source components used in a project.")}
         {h("Portfolio Rights")}
-        {p("DevCraft reserves the right to display the project in our portfolio and marketing materials (website, case studies, social media) unless the Client expressly requests otherwise in writing before project commencement.")}
+        {p("CameeTo reserves the right to display the project in our portfolio and marketing materials (website, case studies, social media) unless the Client expressly requests otherwise in writing before project commencement.")}
       </>
     ),
   },
@@ -111,7 +111,7 @@ const sections = [
     title: "Warranties & Representations",
     content: (
       <>
-        {h("DevCraft Warrants That:")}
+        {h("CameeTo Warrants That:")}
         {ul([
           "We have the right and authority to enter into agreements and deliver the services",
           "Services will be performed in a professional and workmanlike manner",
@@ -121,7 +121,7 @@ const sections = [
         {h("Client Warrants That:")}
         {ul([
           "You have the right and authority to enter into agreements and provide materials shared with us",
-          "Materials provided to DevCraft do not infringe any third-party rights",
+          "Materials provided to CameeTo do not infringe any third-party rights",
           "Information provided is accurate and complete to the best of your knowledge",
           "You will obtain all necessary licences and permissions for third-party integrations you request",
         ])}
@@ -147,15 +147,15 @@ const sections = [
     content: (
       <>
         {h("By Either Party")}
-        {p("Either party may terminate an engagement with 14 days' written notice. Upon termination, DevCraft will deliver all completed work to date, and the Client will pay for all work completed and reasonable costs incurred up to the termination date.")}
+        {p("Either party may terminate an engagement with 14 days' written notice. Upon termination, CameeTo will deliver all completed work to date, and the Client will pay for all work completed and reasonable costs incurred up to the termination date.")}
         {h("For Cause")}
         {p("Either party may terminate immediately upon written notice if the other party materially breaches these terms and fails to cure such breach within 7 days of receiving written notice.")}
-        {h("By DevCraft")}
-        {p("DevCraft may suspend or terminate services immediately if Client fails to make payment when due, provides false information, or requests work that violates applicable law.")}
+        {h("By CameeTo")}
+        {p("CameeTo may suspend or terminate services immediately if Client fails to make payment when due, provides false information, or requests work that violates applicable law.")}
         {h("Effect of Termination")}
         {ul([
           "Client pays for all completed work and reasonable costs to date",
-          "DevCraft delivers all completed work product",
+          "CameeTo delivers all completed work product",
           "Confidentiality and IP provisions survive termination",
           "Each party returns or destroys the other's Confidential Information",
         ])}
@@ -167,7 +167,7 @@ const sections = [
     title: "Acceptable Use",
     content: (
       <>
-        {p("You agree not to engage DevCraft for, or use our deliverables for, any of the following:")}
+        {p("You agree not to engage CameeTo for, or use our deliverables for, any of the following:")}
         {ul([
           "Any unlawful purpose or in violation of any applicable laws or regulations",
           "Building systems designed to harm, harass, or defraud individuals",
@@ -177,7 +177,7 @@ const sections = [
           "Any activity that constitutes a cyberattack or unauthorized system access",
           "Circumventing security measures or export controls",
         ])}
-        {p("DevCraft reserves the right to refuse any engagement or terminate an existing engagement if we determine, in our reasonable judgement, that the requested work violates these principles.")}
+        {p("CameeTo reserves the right to refuse any engagement or terminate an existing engagement if we determine, in our reasonable judgement, that the requested work violates these principles.")}
       </>
     ),
   },
@@ -218,8 +218,8 @@ const sections = [
       <>
         {p("For questions about these Terms of Service, please contact:")}
         {ul([
-          "Email: legal@devcraft.io",
-          "Postal: DevCraft Agency, Koramangala, Bangalore – 560034, Karnataka, India",
+          "Email: legal@cameetoo.com",
+          "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
           "Phone: +91 98765 43210",
         ])}
       </>

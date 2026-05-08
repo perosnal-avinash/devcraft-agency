@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy — DevCraft Agency",
-  description: "How DevCraft uses cookies and similar tracking technologies.",
+  title: "Cookie Policy — CameeTo Agency",
+  description: "How CameeTo uses cookies and similar tracking technologies.",
 };
 
 const p = (text: string) => (
@@ -76,9 +76,9 @@ const sections = [
         {h("1. Strictly Necessary Cookies")}
         {p("These cookies are essential for the website to function and cannot be disabled. They are usually set in response to actions you take, such as setting privacy preferences, logging in, or filling forms.")}
         <CookieTable rows={[
-          { name: "__session", provider: "DevCraft", purpose: "Maintains user session state", expiry: "Session", type: "Necessary" },
-          { name: "csrf_token", provider: "DevCraft", purpose: "Prevents cross-site request forgery attacks", expiry: "Session", type: "Necessary" },
-          { name: "cookie_consent", provider: "DevCraft", purpose: "Stores your cookie consent preferences", expiry: "1 year", type: "Necessary" },
+          { name: "__session", provider: "CameeTo", purpose: "Maintains user session state", expiry: "Session", type: "Necessary" },
+          { name: "csrf_token", provider: "CameeTo", purpose: "Prevents cross-site request forgery attacks", expiry: "Session", type: "Necessary" },
+          { name: "cookie_consent", provider: "CameeTo", purpose: "Stores your cookie consent preferences", expiry: "1 year", type: "Necessary" },
         ]} />
         {h("2. Analytics & Performance Cookies")}
         {p("These cookies help us understand how visitors interact with our website, which pages are most visited, and where visitors come from. This helps us improve our website.")}
@@ -91,7 +91,7 @@ const sections = [
         {h("3. Functional Cookies")}
         {p("These cookies enable enhanced functionality and personalisation, such as remembering your language preference or timezone.")}
         <CookieTable rows={[
-          { name: "user_pref", provider: "DevCraft", purpose: "Remembers UI preferences (theme, language)", expiry: "1 year", type: "Functional" },
+          { name: "user_pref", provider: "CameeTo", purpose: "Remembers UI preferences (theme, language)", expiry: "1 year", type: "Functional" },
           { name: "hs_*", provider: "HubSpot", purpose: "Live chat and contact form functionality", expiry: "13 months", type: "Functional" },
         ]} />
         {h("4. Marketing & Targeting Cookies")}
@@ -165,8 +165,8 @@ const sections = [
       <>
         {p("If you have questions about our use of cookies or this policy, please contact us:")}
         {ul([
-          "Email: privacy@devcraft.io",
-          "Postal: DevCraft Agency, Koramangala, Bangalore – 560034, Karnataka, India",
+          "Email: privacy@cameetoo.com",
+          "Postal: CameeTo Agency, Koramangala, Bangalore – 560034, Karnataka, India",
         ])}
       </>
     ),

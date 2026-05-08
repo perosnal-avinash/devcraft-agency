@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DevCraft — Full-Stack Software Development Agency",
+  title: "CameeTo — Full-Stack Software Development Agency",
   description:
     "We build scalable web apps, mobile apps, AI solutions, cloud infrastructure, and more. End-to-end software development for startups and enterprises.",
   keywords: "software development, web development, mobile apps, AI, cloud, DevOps",

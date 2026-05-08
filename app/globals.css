@@ -76,10 +76,129 @@ html {
   50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
 }
 
+@keyframes bump {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.04); }
+  60% { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow-border {
+  0%, 100% { border-color: rgba(99, 102, 241, 0.2); box-shadow: 0 0 0px rgba(99, 102, 241, 0); }
+  50% { border-color: rgba(99, 102, 241, 0.6); box-shadow: 0 0 16px rgba(99, 102, 241, 0.25); }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .float-animation {
   animation: float 6s ease-in-out infinite;
 }
 
 .pulse-glow-animation {
   animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.bump-animation {
+  animation: bump 0.4s ease-out;
+}
+
+.slide-up-animation {
+  animation: slide-up 0.5s ease-out both;
+}
+
+.fade-in-animation {
+  animation: fade-in 0.4s ease-out both;
+}
+
+.glow-border-animation {
+  animation: glow-border 2.5s ease-in-out infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 25%, #06b6d4 50%, #8b5cf6 75%, #6366f1 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Carousel */
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Navbar nav-link stagger */
+@keyframes nav-link-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-link-in {
+  animation: nav-link-in 0.4s ease-out both;
+}
+
+/* CTA button persistent glow pulse */
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 0 18px rgba(99,102,241,0.45), 0 0 36px rgba(6,182,212,0.2); }
+  50%       { box-shadow: 0 0 32px rgba(99,102,241,0.75), 0 0 56px rgba(6,182,212,0.4); }
+}
+
+.cta-glow-animation {
+  animation: cta-glow 2.8s ease-in-out infinite;
+}
+
+/* Scan-line shimmer sweep on glass cards */
+@keyframes scan {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(300%) skewX(-15deg); }
+}
+
+.card-scan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+  transform: translateX(-100%) skewX(-15deg);
+  pointer-events: none;
+}
+
+.card-scan:hover::after {
+  animation: scan 0.7s ease-out forwards;
+}
+
+/* Soft section-reveal: used on section badge chips */
+@keyframes chip-pop {
+  0%   { opacity: 0; transform: scale(0.8) translateY(10px); }
+  70%  { transform: scale(1.06) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.chip-pop-animation {
+  animation: chip-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }

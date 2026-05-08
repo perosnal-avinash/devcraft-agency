@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const services = [
@@ -72,6 +73,11 @@ const itemVariants = {
   visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.03, duration: 0.2 } }),
 };
 
+const navLinkVariants = {
+  hidden:  { opacity: 0, y: -14 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: 0.55 + i * 0.08, duration: 0.4 } }),
+};
+
 export default function Navbar() {
   const [scrolled,     setScrolled]     = useState(false);
   const [menuOpen,     setMenuOpen]     = useState(false);
@@ -127,17 +133,21 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Code2 className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold gradient-text">DevCraft</span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={140}
+              height={40}
+              className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+              priority
+            />
           </Link>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8">
             {/* Services with mega-dropdown */}
-            <li ref={dropRef} onMouseEnter={openDrop} onMouseLeave={closeDrop} className="relative">
+            <motion.li custom={0} variants={navLinkVariants} initial="hidden" animate="visible" ref={dropRef} onMouseEnter={openDrop} onMouseLeave={closeDrop} className="relative">
               <button
                 className="flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors duration-200 relative group cursor-pointer"
                 onClick={() => setDropOpen((v) => !v)}
@@ -210,10 +220,10 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </li>
+            </motion.li>
 
             {/* Technology dropdown */}
-            <li ref={techDropRef} onMouseEnter={openTechDrop} onMouseLeave={closeTechDrop} className="relative">
+            <motion.li custom={1} variants={navLinkVariants} initial="hidden" animate="visible" ref={techDropRef} onMouseEnter={openTechDrop} onMouseLeave={closeTechDrop} className="relative">
               <button
                 className="flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors duration-200 relative group cursor-pointer"
                 onClick={() => setTechDropOpen((v) => !v)}
@@ -290,10 +300,10 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </li>
+            </motion.li>
 
             {/* FinTech dropdown */}
-            <li ref={fintechDropRef} onMouseEnter={openFintechDrop} onMouseLeave={closeFintechDrop} className="relative">
+            <motion.li custom={2} variants={navLinkVariants} initial="hidden" animate="visible" ref={fintechDropRef} onMouseEnter={openFintechDrop} onMouseLeave={closeFintechDrop} className="relative">
               <button
                 className="flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors duration-200 relative group cursor-pointer"
                 onClick={() => setFintechDropOpen((v) => !v)}
@@ -385,11 +395,11 @@ export default function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </li>
+            </motion.li>
 
             {/* Other links */}
-            {otherLinks.map((link) => (
-              <li key={link.href}>
+            {otherLinks.map((link, i) => (
+              <motion.li key={link.href} custom={3 + i} variants={navLinkVariants} initial="hidden" animate="visible">
                 <button
                   onClick={() => handleNav(link.href)}
                   className="text-sm text-slate-400 hover:text-white transition-colors duration-200 relative group cursor-pointer"
@@ -397,19 +407,24 @@ export default function Navbar() {
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300" />
                 </button>
-              </li>
+              </motion.li>
             ))}
           </ul>
 
           {/* CTA */}
-          <div className="hidden md:block">
+          <motion.div
+            className="hidden md:block"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.9, duration: 0.4, type: "spring" }}
+          >
             <button
               onClick={() => handleNav("/contact")}
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 hover:scale-105 transition-all duration-200 glow-purple cursor-pointer"
+              className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 hover:scale-105 transition-all duration-200 cta-glow-animation cursor-pointer"
             >
               Get a Quote
             </button>
-          </div>
+          </motion.div>
 
           {/* Mobile toggle */}
           <button

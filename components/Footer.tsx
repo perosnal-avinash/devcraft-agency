@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Code2, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import Image from "next/image";
 
 const linkGroups: { section: string; items: { label: string; href: string }[] }[] = [
   {
@@ -62,11 +63,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
-                <Code2 className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold gradient-text">DevCraft</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image src="/logo.png" alt="Logo" width={130} height={36} className="h-9 w-auto" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
               Full-service software development agency. We turn ambitious ideas into

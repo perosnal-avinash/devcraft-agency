@@ -46,7 +46,7 @@ export default function LegalLayout({
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
               <Code2 className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold gradient-text text-lg">DevCraft</span>
+            <span className="font-bold gradient-text text-lg">CameeTo</span>
           </Link>
           <Link href="/contact" className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity">
             Contact Us
@@ -153,7 +153,7 @@ export default function LegalLayout({
       {/* Legal footer links */}
       <div className="border-t border-white/10 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-600">© {new Date().getFullYear()} DevCraft Agency. All rights reserved.</p>
+          <p className="text-xs text-slate-600">© {new Date().getFullYear()} CameeTo Agency. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 text-xs">
             {[
               { label: "Privacy Policy", href: "/privacy-policy" },

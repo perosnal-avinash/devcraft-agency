@@ -168,11 +168,13 @@ export default function Services() {
                   className="glass rounded-2xl p-6 group hover:border-indigo-500/40 transition-all duration-300 flex flex-col h-full cursor-pointer"
                 >
                   {/* Icon */}
-                  <div
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                  <motion.div
+                    whileHover={{ scale: [1, 1.18, 0.95, 1.08, 1], rotate: [0, -6, 6, -3, 0] }}
+                    transition={{ duration: 0.5 }}
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}
                   >
                     <Icon className="w-6 h-6 text-white" />
-                  </div>
+                  </motion.div>
 
                   <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
                   <p className="text-sm text-slate-400 mb-4 leading-relaxed flex-1">{service.desc}</p>

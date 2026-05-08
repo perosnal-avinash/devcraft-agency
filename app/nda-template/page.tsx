@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "NDA Template — DevCraft Agency",
-  description: "DevCraft's standard Non-Disclosure Agreement template for client engagements.",
+  title: "NDA Template — CameeTo Agency",
+  description: "CameeTo's standard Non-Disclosure Agreement template for client engagements.",
 };
 
 const p = (text: string) => (
@@ -42,13 +42,13 @@ const sections = [
     title: "About This NDA",
     content: (
       <>
-        {p("This is DevCraft's standard Mutual Non-Disclosure Agreement (NDA). We use this agreement before sharing detailed project information, proprietary data, or confidential business details with prospective or active clients.")}
+        {p("This is CameeTo's standard Mutual Non-Disclosure Agreement (NDA). We use this agreement before sharing detailed project information, proprietary data, or confidential business details with prospective or active clients.")}
         {p("This template is provided for reference. When you request an NDA, our team will send you a pre-filled version via DocuSign or equivalent e-signature platform for review and signing within 24 hours.")}
         {ul([
           "This is a mutual NDA — both parties' confidential information is protected equally",
           "It covers the evaluation period and any resulting engagement",
           "Typical signing time: 15–30 minutes via e-signature",
-          "To request a signed NDA, email legal@devcraft.io or indicate it in your contact form",
+          "To request a signed NDA, email legal@cameetoo.com or indicate it in your contact form",
         ])}
       </>
     ),
@@ -70,9 +70,9 @@ const sections = [
 
         <div className="glass rounded-xl p-4 mb-4 space-y-3">
           <div>
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Party A (DevCraft)</p>
+            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Party A (CameeTo)</p>
             <p className="text-sm text-slate-300">
-              <strong>DevCraft Agency</strong>, a company registered in India, having its principal place of business at Koramangala, Bangalore – 560034, Karnataka, India (<strong>"DevCraft"</strong>); and
+              <strong>CameeTo Agency</strong>, a company registered in India, having its principal place of business at Koramangala, Bangalore – 560034, Karnataka, India (<strong>"CameeTo"</strong>); and
             </p>
           </div>
           <div className="border-t border-white/10 pt-3">
@@ -83,7 +83,7 @@ const sections = [
           </div>
         </div>
 
-        {p("DevCraft and Client are each referred to herein as a 'Party' and collectively as the 'Parties'.")}
+        {p("CameeTo and Client are each referred to herein as a 'Party' and collectively as the 'Parties'.")}
 
         {h("RECITALS")}
         {p("WHEREAS, the Parties desire to explore a potential business relationship involving software development services (the 'Purpose'), and in connection with such exploration, each Party may disclose to the other certain confidential and proprietary information;")}
@@ -239,7 +239,7 @@ const sections = [
           </div>
         </div>
         <p className="text-xs text-slate-600 mt-4 text-center italic">
-          This template is provided for informational purposes. Please consult a legal professional before executing. DevCraft will provide a pre-filled, ready-to-sign version upon request.
+          This template is provided for informational purposes. Please consult a legal professional before executing. CameeTo will provide a pre-filled, ready-to-sign version upon request.
         </p>
       </>
     ),
@@ -251,8 +251,8 @@ const sections = [
       <>
         {p("To request a signed NDA before your project discussion, simply:")}
         {ul([
-          "Email legal@devcraft.io with subject 'NDA Request — [Your Company Name]'",
-          "Or tick the 'NDA' checkbox on our contact form at devcraft.io/contact",
+          "Email legal@cameetoo.com with subject 'NDA Request — [Your Company Name]'",
+          "Or tick the 'NDA' checkbox on our contact form at cameetoo.com/contact",
           "We'll send a pre-filled DocuSign link within 24 hours",
           "Once both parties sign, the NDA is in effect immediately",
         ])}

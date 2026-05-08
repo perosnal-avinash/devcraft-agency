@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft, ArrowRight, Send, Mail, Phone, MapPin,
-  Clock, CheckCircle2, Code2, ChevronDown, ChevronUp,
+  Clock, CheckCircle2, ChevronDown, ChevronUp,
   MessageSquare, CalendarDays, Zap, Shield, Star,
 } from "lucide-react";
 
@@ -168,11 +169,8 @@ export default function ContactPage() {
           <Link href="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
-              <Code2 className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold gradient-text text-lg">DevCraft</span>
+          <Link href="/">
+            <Image src="/logo.png" alt="Logo" width={120} height={34} className="h-8 w-auto" />
           </Link>
           <Link href="/#services" className="px-5 py-2 rounded-full glass text-slate-300 text-sm font-semibold hover:text-white hover:bg-white/10 transition-all">
             Our Services

@@ -53,7 +53,7 @@ export default function About() {
             <span className="gradient-text">Your Tech Partner</span>
           </h2>
           <p className="text-slate-400 text-lg mb-6 leading-relaxed">
-            DevCraft has been building software since 2016. We've shipped 200+ products across
+            CameeTo has been building software since 2016. We've shipped 200+ products across
             fintech, healthtech, e-commerce, logistics, and SaaS — from early-stage MVPs to
             enterprise platforms serving millions of users.
           </p>

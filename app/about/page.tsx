@@ -24,7 +24,7 @@ const timeline = [
   {
     year: "2016",
     title: "Founded in Bangalore",
-    desc: "DevCraft started as a 3-person team building MVPs for early-stage startups. First client: a logistics startup that grew to 500K users.",
+    desc: "CameeTo started as a 3-person team building MVPs for early-stage startups. First client: a logistics startup that grew to 500K users.",
   },
   {
     year: "2018",
@@ -179,7 +179,7 @@ export default function AboutPage() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
               <Code2 className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold gradient-text text-lg">DevCraft</span>
+            <span className="font-bold gradient-text text-lg">CameeTo</span>
           </Link>
           <Link href="/#contact" className="px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity">
             Work With Us
@@ -213,7 +213,7 @@ export default function AboutPage() {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Founded in 2016, DevCraft is a full-service software engineering agency that has shipped
+            Founded in 2016, CameeTo is a full-service software engineering agency that has shipped
             200+ digital products for startups, scaleups, and enterprises across 15+ countries.
           </motion.p>
           <motion.div
@@ -378,7 +378,7 @@ export default function AboutPage() {
             >
               <div className="text-center mb-10">
                 <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-indigo-300 glass mb-4">HOW WE WORK</span>
-                <h2 className="text-3xl font-extrabold">The <span className="gradient-text">DevCraft Way</span></h2>
+                <h2 className="text-3xl font-extrabold">The <span className="gradient-text">CameeTo Way</span></h2>
               </div>
               <div className="grid md:grid-cols-3 gap-6">
                 {[
