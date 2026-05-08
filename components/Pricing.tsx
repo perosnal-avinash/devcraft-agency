@@ -90,7 +90,7 @@ export default function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-8 items-stretch">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -100,7 +100,7 @@ export default function Pricing() {
               transition={{ delay: i * 0.15, duration: 0.5 }}
               whileHover={{ y: -8 }}
               className={`relative glass rounded-2xl p-8 flex flex-col ${
-                plan.popular ? "border border-indigo-500/50 glow-purple" : ""
+                plan.popular ? "border border-indigo-500/50 glow-purple pt-10 md:pt-8" : ""
               }`}
             >
               {plan.popular && (
