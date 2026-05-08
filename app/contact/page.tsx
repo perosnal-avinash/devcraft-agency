@@ -9,6 +9,7 @@ import {
   Clock, CheckCircle2, ChevronDown, ChevronUp,
   MessageSquare, CalendarDays, Zap, Shield, Star,
 } from "lucide-react";
+import { validateField, fieldBorder } from "@/lib/validate";
 
 /* ─── Data ───────────────────────────────────────────────── */
 
@@ -127,6 +128,28 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const requiredFields: Record<string, boolean> = { name: true, email: true, service: true, message: true, phone: false };
+
+  const touch = (field: string) => {
+    const val = form[field as keyof typeof form];
+    setTouched((t) => ({ ...t, [field]: true }));
+    setErrors((e) => ({ ...e, [field]: validateField(field, String(val ?? ""), requiredFields[field] ?? false) }));
+  };
+
+  const validateAll = () => {
+    const newErrors: Record<string, string> = {};
+    const newTouched: Record<string, boolean> = {};
+    Object.entries(requiredFields).forEach(([f, req]) => {
+      newTouched[f] = true;
+      newErrors[f] = validateField(f, String(form[f as keyof typeof form] ?? ""), req);
+    });
+    setTouched((t) => ({ ...t, ...newTouched }));
+    setErrors((e) => ({ ...e, ...newErrors }));
+    return Object.values(newErrors).every((e) => !e);
+  };
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [form, setForm] = useState({
     name: "",
@@ -142,6 +165,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateAll()) return;
     setLoading(true);
     setSubmitError("");
     try {
@@ -311,24 +335,26 @@ export default function ContactPage() {
                       <div>
                         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Full Name *</label>
                         <input
-                          required
                           type="text"
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          onBlur={() => touch("name")}
                           placeholder="John Smith"
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                          className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.name, errors.name, form.name)}`}
                         />
+                        {touched.name && errors.name && <p className="text-xs text-red-400 mt-1">{errors.name}</p>}
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email Address *</label>
                         <input
-                          required
                           type="email"
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          onBlur={() => touch("email")}
                           placeholder="john@company.com"
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                          className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.email, errors.email, form.email)}`}
                         />
+                        {touched.email && errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
                       </div>
                     </div>
 
@@ -340,9 +366,11 @@ export default function ContactPage() {
                           type="tel"
                           value={form.phone}
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                          onBlur={() => touch("phone")}
                           placeholder="+91 98765 43210"
-                          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                          className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.phone, errors.phone ?? "", form.phone)}`}
                         />
+                        {touched.phone && errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
                       </div>
                       <div>
                         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Company / Startup</label>
@@ -360,14 +388,15 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Service Required *</label>
                       <select
-                        required
                         value={form.service}
                         onChange={(e) => setForm({ ...form, service: e.target.value })}
-                        className="w-full bg-[#0a0f1e] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                        onBlur={() => touch("service")}
+                        className={`w-full bg-[#0a0f1e] border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.service, errors.service, form.service)}`}
                       >
                         <option value="">Select a service</option>
                         {services.map((s) => <option key={s}>{s}</option>)}
                       </select>
+                      {touched.service && errors.service && <p className="text-xs text-red-400 mt-1">{errors.service}</p>}
                     </div>
 
                     {/* Budget + Timeline */}
@@ -400,13 +429,14 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Project Details *</label>
                       <textarea
-                        required
                         rows={5}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
+                        onBlur={() => touch("message")}
                         placeholder="Describe your project — what you're building, the problem it solves, key features, any technical constraints, and anything else that helps us understand your vision..."
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+                        className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors resize-none ${fieldBorder(!!touched.message, errors.message, form.message)}`}
                       />
+                      {touched.message && errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
                     </div>
 
                     {/* NDA checkbox */}

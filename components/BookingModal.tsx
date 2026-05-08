@@ -6,6 +6,7 @@ import {
   Calendar, X, User, Mail, Phone,
   ChevronRight, CheckCircle2, Sparkles,
 } from "lucide-react";
+import { validateField, fieldBorder } from "@/lib/validate";
 
 /* ── Data ────────────────────────────────────────────────────── */
 const timeSlots = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"];
@@ -50,7 +51,7 @@ function StepBar({ current }: { current: number }) {
 }
 
 /* ── Helpers ─────────────────────────────────────────────────── */
-function Input({ label, icon: Icon, ...props }: { label: string; icon: React.ElementType } & React.InputHTMLAttributes<HTMLInputElement>) {
+function Input({ label, icon: Icon, error, touched: isTouched, ...props }: { label: string; icon: React.ElementType; error?: string; touched?: boolean } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div>
       <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">{label}</label>
@@ -58,9 +59,10 @@ function Input({ label, icon: Icon, ...props }: { label: string; icon: React.Ele
         <Icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
         <input
           {...props}
-          className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors"
+          className={`w-full bg-white/5 border rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!isTouched, error ?? "", String(props.value ?? ""))}`}
         />
       </div>
+      {isTouched && error && <p className="text-xs text-red-400 mt-1">{error}</p>}
     </div>
   );
 }
@@ -92,13 +94,29 @@ export default function BookingModal({ onClose }: { onClose: () => void }) {
     days: [] as string[], time: "",
     service: "", message: "",
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const set = (key: string, val: unknown) => setForm((f) => ({ ...f, [key]: val }));
   const toggleDay = (d: string) =>
     set("days", form.days.includes(d) ? form.days.filter((x) => x !== d) : [...form.days, d]);
 
+  const touch = (field: string, value: string, required = true) => {
+    setTouched((t) => ({ ...t, [field]: true }));
+    setErrors((e) => ({ ...e, [field]: validateField(field, value, required) }));
+  };
+
+  const validateStep0 = () => {
+    const nameErr  = validateField("name",  form.name,  true);
+    const emailErr = validateField("email", form.email, true);
+    const phoneErr = validateField("phone", form.phone, false);
+    setTouched((t) => ({ ...t, name: true, email: true, phone: true }));
+    setErrors((e) => ({ ...e, name: nameErr, email: emailErr, phone: phoneErr }));
+    return !nameErr && !emailErr && !phoneErr;
+  };
+
   const canNext = [
-    form.name && form.email,
+    !errors.name && !errors.email && !errors.phone && form.name && form.email,
     form.days.length > 0 && form.time,
     form.service,
   ][step];
@@ -118,6 +136,7 @@ export default function BookingModal({ onClose }: { onClose: () => void }) {
   };
 
   const next = () => {
+    if (step === 0 && !validateStep0()) return;
     if (step < 2) { setDir(1); setStep((s) => s + 1); }
     else submit();
   };
@@ -203,9 +222,9 @@ export default function BookingModal({ onClose }: { onClose: () => void }) {
                   >
                     {step === 0 && (
                       <div className="space-y-4">
-                        <Input label="Full Name *" icon={User} placeholder="Avinash Kumar" value={form.name} onChange={(e) => set("name", e.target.value)} />
-                        <Input label="Email Address *" icon={Mail} type="email" placeholder="you@company.com" value={form.email} onChange={(e) => set("email", e.target.value)} />
-                        <Input label="Phone (optional)" icon={Phone} type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={(e) => set("phone", e.target.value)} />
+                        <Input label="Full Name *" icon={User} placeholder="Avinash Kumar" value={form.name} onChange={(e) => set("name", e.target.value)} onBlur={() => touch("name", form.name, true)} error={errors.name} touched={touched.name} />
+                        <Input label="Email Address *" icon={Mail} type="email" placeholder="you@company.com" value={form.email} onChange={(e) => set("email", e.target.value)} onBlur={() => touch("email", form.email, true)} error={errors.email} touched={touched.email} />
+                        <Input label="Phone (optional)" icon={Phone} type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={(e) => set("phone", e.target.value)} onBlur={() => touch("phone", form.phone, false)} error={errors.phone} touched={touched.phone} />
                       </div>
                     )}
 

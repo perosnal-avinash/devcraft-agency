@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
 import BookingModal from "@/components/BookingModal";
+import { validateField, fieldBorder } from "@/lib/validate";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "info@cameeto.com" },
@@ -26,14 +27,28 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    company: "",
-    service: "",
-    budget: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", company: "", service: "", budget: "", message: "" });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const required: Record<string, boolean> = { name: true, email: true, service: true, message: true };
+
+  const touch = (field: string) => {
+    setTouched((t) => ({ ...t, [field]: true }));
+    setErrors((e) => ({ ...e, [field]: validateField(field, form[field as keyof typeof form] as string, required[field] ?? false) }));
+  };
+
+  const validateAll = () => {
+    const newErrors: Record<string, string> = {};
+    const newTouched: Record<string, boolean> = {};
+    (Object.keys(required) as (keyof typeof form)[]).forEach((f) => {
+      newTouched[f] = true;
+      newErrors[f] = validateField(f, form[f] as string, required[f]);
+    });
+    setTouched((t) => ({ ...t, ...newTouched }));
+    setErrors((e) => ({ ...e, ...newErrors }));
+    return Object.values(newErrors).every((e) => !e);
+  };
 
   const [countdown, setCountdown] = useState(5);
 
@@ -56,8 +71,13 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateAll()) return;
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, type: "contact" }),
+    });
     setLoading(false);
     setSent(true);
   };
@@ -175,37 +195,33 @@ export default function Contact() {
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">
-                      Your Name *
-                    </label>
+                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Your Name *</label>
                     <input
-                      required
                       type="text"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onBlur={() => touch("name")}
                       placeholder="John Smith"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                      className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.name, errors.name, form.name)}`}
                     />
+                    {touched.name && errors.name && <p className="text-xs text-red-400 mt-1">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">
-                      Email Address *
-                    </label>
+                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Email Address *</label>
                     <input
-                      required
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      onBlur={() => touch("email")}
                       placeholder="john@company.com"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                      className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.email, errors.email, form.email)}`}
                     />
+                    {touched.email && errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">
-                    Company / Startup
-                  </label>
+                  <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Company / Startup</label>
                   <input
                     type="text"
                     value={form.company}
@@ -217,27 +233,20 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">
-                      Service Needed *
-                    </label>
+                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Service Needed *</label>
                     <select
-                      required
                       value={form.service}
                       onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className="w-full bg-[#0a0f1e] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition-colors"
+                      onBlur={() => touch("service")}
+                      className={`w-full bg-[#0a0f1e] border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-indigo-500 transition-colors ${fieldBorder(!!touched.service, errors.service, form.service)}`}
                     >
                       <option value="">Select a service</option>
-                      {services.map((s) => (
-                        <option key={s} value={s}>
-                          {s}
-                        </option>
-                      ))}
+                      {services.map((s) => <option key={s} value={s}>{s}</option>)}
                     </select>
+                    {touched.service && errors.service && <p className="text-xs text-red-400 mt-1">{errors.service}</p>}
                   </div>
                   <div>
-                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">
-                      Budget Range
-                    </label>
+                    <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Budget Range</label>
                     <select
                       value={form.budget}
                       onChange={(e) => setForm({ ...form, budget: e.target.value })}
@@ -254,17 +263,16 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">
-                    Project Details *
-                  </label>
+                  <label className="block text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Project Details *</label>
                   <textarea
-                    required
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onBlur={() => touch("message")}
                     placeholder="Describe your project, goals, timeline, and any specific requirements..."
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-indigo-500 transition-colors resize-none ${fieldBorder(!!touched.message, errors.message, form.message)}`}
                   />
+                  {touched.message && errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
                 </div>
 
                 <button
