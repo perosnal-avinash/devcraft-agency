@@ -109,8 +109,8 @@ export default function Testimonials() {
 
       {/* Carousel — full width, overflow hidden */}
       <div className="relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#020817] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#020817] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-32 bg-gradient-to-r from-[#020817] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-32 bg-gradient-to-l from-[#020817] to-transparent z-10 pointer-events-none" />
 
         {/* Row 1 — left to right */}
         <div className="carousel-track mb-6 px-6">

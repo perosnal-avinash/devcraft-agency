@@ -117,10 +117,7 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10"
         >
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} DevCraft Agency. All rights reserved.
-          </p>
-          <p className="text-slate-600 text-xs">
-            Built with Next.js · Framer Motion · Tailwind CSS
+            © {new Date().getFullYear()} CameeTo. All rights reserved.
           </p>
         </motion.div>
       </div>

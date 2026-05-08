@@ -168,7 +168,7 @@ export default function Navbar() {
                     exit="exit"
                     onMouseEnter={openDrop}
                     onMouseLeave={closeDrop}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] glass rounded-2xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[680px] max-w-[calc(100vw-2rem)] glass rounded-2xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden"
                     style={{ transformOrigin: "top center" }}
                   >
                     {/* Header strip */}
@@ -244,7 +244,7 @@ export default function Navbar() {
                     exit="exit"
                     onMouseEnter={openTechDrop}
                     onMouseLeave={closeTechDrop}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[720px] glass rounded-2xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[720px] max-w-[calc(100vw-2rem)] glass rounded-2xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden"
                     style={{ transformOrigin: "top center" }}
                   >
                     {/* Header */}
@@ -324,7 +324,7 @@ export default function Navbar() {
                     exit="exit"
                     onMouseEnter={openFintechDrop}
                     onMouseLeave={closeFintechDrop}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[700px] glass rounded-2xl border border-emerald-500/20 shadow-2xl shadow-black/40 overflow-hidden"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[700px] max-w-[calc(100vw-2rem)] glass rounded-2xl border border-emerald-500/20 shadow-2xl shadow-black/40 overflow-hidden"
                     style={{ transformOrigin: "top center" }}
                   >
                     {/* Header */}

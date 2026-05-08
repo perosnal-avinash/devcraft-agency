@@ -116,7 +116,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center hero-gradient grid-pattern overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center hero-gradient grid-pattern overflow-hidden pt-20"
     >
       {/* Mouse spotlight */}
       <motion.div

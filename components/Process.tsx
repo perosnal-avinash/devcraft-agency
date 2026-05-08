@@ -95,7 +95,7 @@ export default function Process() {
           </p>
 
           {/* Animated step counter strip */}
-          <div className="flex items-center justify-center gap-2 mt-8">
+          <div className="flex items-center justify-center gap-1.5 mt-8 overflow-x-auto px-4 scrollbar-none">
             {steps.map((s, i) => (
               <motion.div
                 key={i}
@@ -143,7 +143,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ delay: i * 0.08, duration: 0.55 }}
-                className={`relative flex flex-col lg:flex-row items-start lg:items-center gap-8 ${
+                className={`relative flex flex-col lg:flex-row items-start lg:items-center gap-8 pl-14 lg:pl-0 ${
                   i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 }`}
               >
@@ -235,7 +235,7 @@ export default function Process() {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, type: "spring", stiffness: 250 }}
-                  className={`flex lg:hidden w-10 h-10 rounded-full bg-gradient-to-br ${step.color} items-center justify-center flex-shrink-0 absolute -left-2 top-6 shadow-lg ${step.glow}`}
+                  className={`flex lg:hidden w-10 h-10 rounded-full bg-gradient-to-br ${step.color} items-center justify-center flex-shrink-0 absolute left-0 top-6 shadow-lg ${step.glow}`}
                 >
                   <span className="text-white font-bold text-sm">{step.number}</span>
                 </motion.div>

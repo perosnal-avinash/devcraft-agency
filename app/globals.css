@@ -192,6 +192,14 @@ html {
   animation: scan 0.7s ease-out forwards;
 }
 
+/* Hide scrollbar utility */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* Soft section-reveal: used on section badge chips */
 @keyframes chip-pop {
   0%   { opacity: 0; transform: scale(0.8) translateY(10px); }

@@ -40,7 +40,7 @@ const contactMethods = [
   {
     icon: MapPin,
     label: "Our Office",
-    value: "Bangalore, India",
+    value: "Noida, India",
     sub: "Remote-first · Serving worldwide",
     gradient: "from-cyan-500 to-blue-600",
     href: "#",
@@ -117,8 +117,7 @@ const reasons = [
 ];
 
 const offices = [
-  { city: "Bangalore", country: "India (HQ)", timezone: "IST (UTC+5:30)" },
-  { city: "Mumbai", country: "India", timezone: "IST (UTC+5:30)" },
+  { city: "Noida", country: "India (HQ)", timezone: "IST (UTC+5:30)" },
   { city: "Remote", country: "Worldwide", timezone: "Flexible to your TZ" },
 ];
 
