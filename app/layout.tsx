@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ConsentBanner from "@/components/ConsentBanner";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
 
 export const metadata: Metadata = {
   title: "CameeTo — Software Agency",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased bg-[#020817] text-slate-100 overflow-x-hidden">
+      <body className={`${inter.className} antialiased bg-[#020817] text-slate-100 overflow-x-hidden`}>
         {children}
         <ConsentBanner />
       </body>

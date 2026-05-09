@@ -24,7 +24,7 @@ const floatingBadges = [
   { text: "TypeScript",       top: "42%", right: "1%",  delay: 1.5, color: "text-indigo-300", dot: "bg-indigo-400", yOffset: 9  },
 ];
 
-const particles = Array.from({ length: 36 }, (_, i) => ({
+const particles = Array.from({ length: 18 }, (_, i) => ({
   id: i,
   x: Math.random() * 100,
   y: Math.random() * 100,
@@ -99,11 +99,19 @@ export default function Hero() {
   const spotY = useSpring(mouseY, { stiffness: 60, damping: 20 });
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+    let ticking = false;
     const move = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          mouseX.set(e.clientX);
+          mouseY.set(e.clientY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("mousemove", move);
+    window.addEventListener("mousemove", move, { passive: true });
     return () => window.removeEventListener("mousemove", move);
   }, [mouseX, mouseY]);
 
