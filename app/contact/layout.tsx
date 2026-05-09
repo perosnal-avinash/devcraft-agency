@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Tell us about your project. We'll get back within 24 hours with a tailored proposal.",
     url: "/contact",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "CameeTo" }],
   },
 };
 

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "200+ projects delivered. 50+ engineers. 8+ years of experience. Meet the team behind CameeTo.",
     url: "/about",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "CameeTo" }],
   },
 };
 
