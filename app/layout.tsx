@@ -5,11 +5,71 @@ import ConsentBanner from "@/components/ConsentBanner";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", preload: true });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cameeto.com";
+const SITE_NAME = "CameeTo";
+const DEFAULT_TITLE = "CameeTo — Software Development Agency in India";
+const DEFAULT_DESC =
+  "CameeTo is a full-service software development agency based in Noida, India. We build web apps, mobile apps, AI/ML solutions, FinTech platforms, and enterprise software for startups and enterprises worldwide.";
+
 export const metadata: Metadata = {
-  title: "CameeTo — Software Agency",
-  description:
-    "We build web apps, mobile apps, and AI solutions for startups and enterprises.",
-  keywords: "software development, web development, mobile apps, AI, cloud, DevOps",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DEFAULT_DESC,
+  keywords: [
+    "software development company India",
+    "web development agency Noida",
+    "mobile app development India",
+    "AI ML development company",
+    "fintech software development",
+    "React Next.js development",
+    "enterprise software India",
+    "custom software development",
+    "startup software development",
+    "software agency Noida",
+  ],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESC,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CameeTo — Software Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESC,
+    images: ["/og-image.png"],
+    creator: "@cameeto",
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
