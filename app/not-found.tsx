@@ -69,7 +69,7 @@ export default function NotFound() {
         initial={{ opacity: 0, y: 40, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 w-full max-w-2xl glass rounded-3xl border border-white/10 p-10 md:p-14 text-center overflow-hidden"
+        className="relative z-10 w-full max-w-2xl glass rounded-3xl border border-white/10 p-6 sm:p-10 md:p-14 text-center overflow-hidden"
       >
         {/* Top gradient line */}
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-cyan-500 to-violet-500" />
@@ -84,7 +84,7 @@ export default function NotFound() {
           className="relative mb-4"
         >
           <span
-            className="text-[9rem] md:text-[12rem] font-black leading-none select-none"
+            className="text-[6rem] sm:text-[9rem] md:text-[12rem] font-black leading-none select-none"
             style={{
               background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #06b6d4 100%)",
               WebkitBackgroundClip: "text",
@@ -97,7 +97,7 @@ export default function NotFound() {
           </span>
           {/* Ghost copies for glitch effect */}
           <span
-            className="absolute inset-0 text-[9rem] md:text-[12rem] font-black leading-none select-none pointer-events-none"
+            className="absolute inset-0 text-[6rem] sm:text-[9rem] md:text-[12rem] font-black leading-none select-none pointer-events-none"
             style={{
               background: "linear-gradient(135deg, #06b6d4, #6366f1)",
               WebkitBackgroundClip: "text",
@@ -159,7 +159,7 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10"
         >
           <Link
             href="/"
