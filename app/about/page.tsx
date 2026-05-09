@@ -7,7 +7,7 @@ import Image from "next/image";
 import {
   ArrowLeft, ArrowRight, CheckCircle2, Target, Users, Award,
   Lightbulb, Globe, Heart, Rocket, TrendingUp,
-  MapPin, Calendar, Star, Shield, Zap, Clock,
+  Calendar, Star, Shield, Zap, Clock,
 } from "lucide-react";
 
 /* ─── Data ───────────────────────────────────────────────── */
@@ -93,56 +93,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Arjun Mehta",
-    role: "Co-Founder & CEO",
-    bio: "10+ years in product engineering. Previously at Razorpay and Flipkart. IIT Bombay CS graduate.",
-    avatar: "AM",
-    gradient: "from-indigo-500 to-purple-600",
-    location: "Bangalore",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Co-Founder & CTO",
-    bio: "Led infrastructure at a unicorn startup. Deep expertise in distributed systems, Kubernetes, and platform engineering.",
-    avatar: "PS",
-    gradient: "from-cyan-500 to-blue-600",
-    location: "Hyderabad",
-  },
-  {
-    name: "Rohan Kapoor",
-    role: "VP Engineering",
-    bio: "15+ years building enterprise software. Certified AWS Solutions Architect. Passionate about clean architecture.",
-    avatar: "RK",
-    gradient: "from-emerald-500 to-teal-600",
-    location: "Mumbai",
-  },
-  {
-    name: "Sneha Iyer",
-    role: "Head of Design",
-    bio: "Former design lead at a Series B fintech. Specialises in complex data-heavy UX and financial product design.",
-    avatar: "SI",
-    gradient: "from-pink-500 to-rose-600",
-    location: "Chennai",
-  },
-  {
-    name: "Vikram Nair",
-    role: "Head of AI / ML",
-    bio: "PhD in Machine Learning from IISc. Published researcher in NLP. Led AI teams at two YC-backed startups.",
-    avatar: "VN",
-    gradient: "from-violet-500 to-purple-600",
-    location: "Bangalore",
-  },
-  {
-    name: "Ananya Patel",
-    role: "Head of FinTech",
-    bio: "Ex-banker turned engineer. Deep domain expertise in payments, lending, and RBI regulatory compliance.",
-    avatar: "AP",
-    gradient: "from-amber-500 to-orange-600",
-    location: "Pune",
-  },
-];
 
 const perks = [
   "Fully remote-friendly team",
@@ -165,7 +115,7 @@ const awards = [
 /* ─── Component ──────────────────────────────────────────── */
 
 export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState<"story" | "team" | "culture">("story");
+  const [activeTab, setActiveTab] = useState<"story" | "culture">("story");
 
   return (
     <div className="min-h-screen bg-[#020817] text-slate-100 overflow-x-hidden">
@@ -256,7 +206,7 @@ export default function AboutPage() {
       {/* ── Tab switcher ────────────────────────────────────── */}
       <section className="py-4 px-6 sticky top-16 z-40 bg-[#020817]/90 backdrop-blur border-b border-white/5">
         <div className="max-w-4xl mx-auto flex justify-center gap-2">
-          {(["story", "team", "culture"] as const).map((tab) => (
+          {(["story", "culture"] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -266,7 +216,7 @@ export default function AboutPage() {
                   : "glass text-slate-400 hover:text-white"
               }`}
             >
-              {tab === "story" ? "Our Story" : tab === "team" ? "The Team" : "Culture & Values"}
+              {tab === "story" ? "Our Story" : "Culture & Values"}
             </button>
           ))}
         </div>
@@ -419,78 +369,6 @@ export default function AboutPage() {
                   );
                 })}
               </div>
-            </motion.div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Team ────────────────────────────────────────────── */}
-      {activeTab === "team" && (
-        <section className="py-20 px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-14"
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold text-indigo-300 glass mb-4">LEADERSHIP</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-3">
-                Meet the <span className="gradient-text">Team</span>
-              </h2>
-              <p className="text-slate-400 text-lg max-w-xl mx-auto">
-                50+ engineers, designers, and domain experts — distributed across India and beyond.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {team.map((member, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -8 }}
-                  className="glass rounded-2xl p-6 group"
-                >
-                  {/* Avatar */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-lg font-extrabold flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                      {member.avatar}
-                    </div>
-                    <div>
-                      <h3 className="text-base font-bold text-white">{member.name}</h3>
-                      <p className="text-xs text-indigo-400 font-semibold">{member.role}</p>
-                      <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
-                        <MapPin className="w-3 h-3" /> {member.location}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-slate-400 leading-relaxed">{member.bio}</p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Join us strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="glass rounded-3xl p-10 border border-indigo-500/20 text-center"
-            >
-              <h2 className="text-2xl font-extrabold text-white mb-3">
-                Want to join the team?
-              </h2>
-              <p className="text-slate-400 mb-6 max-w-xl mx-auto">
-                We're always looking for exceptional engineers, designers, and domain experts.
-                If you care about craft and want to work on challenging problems, we'd love to talk.
-              </p>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold hover:opacity-90 hover:scale-105 transition-all"
-              >
-                View Open Roles <ArrowRight className="w-5 h-5" />
-              </Link>
             </motion.div>
           </div>
         </section>
