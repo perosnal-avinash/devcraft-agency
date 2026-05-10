@@ -14,9 +14,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "CameeTo — Software Development Agency in India | Web, Mobile & AI",
+  title: "CameeTo — Web, Mobile & AI Dev Agency in India",
   description:
-    "CameeTo builds high-performance web apps, mobile apps, AI/ML systems, and FinTech platforms. 200+ projects delivered. Based in Noida, India — serving clients globally.",
+    "CameeTo builds web apps, mobile apps, AI/ML systems & FinTech platforms. 200+ projects delivered. Based in Noida, India, serving clients globally.",
   alternates: { canonical: "/" },
 };
 
@@ -93,7 +93,6 @@ const jsonLd = {
         closes: "18:00",
       },
       priceRange: "$$$",
-      servesCuisine: undefined,
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9",

@@ -6,11 +6,13 @@ export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({ slug }));
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cameeto.com";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
-  const url = `/services/${slug}`;
+  const url = `${SITE_URL}/services/${slug}`;
   return {
     title: `${service.title} Services — CameeTo`,
     description: service.description,
@@ -22,15 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ],
     alternates: { canonical: url },
     openGraph: {
+      type: "website",
       title: `${service.title} Services — CameeTo`,
       description: service.description,
       url,
-      type: "website",
+      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: `${service.title} — CameeTo` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${service.title} Services — CameeTo`,
       description: service.description,
+      images: [`${SITE_URL}/opengraph-image`],
     },
   };
 }

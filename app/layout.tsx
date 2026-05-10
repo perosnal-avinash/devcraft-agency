@@ -9,7 +9,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cameeto.com";
 const SITE_NAME = "CameeTo";
 const DEFAULT_TITLE = "CameeTo — Software Development Agency in India";
 const DEFAULT_DESC =
-  "CameeTo is a full-service software development agency based in Noida, India. We build web apps, mobile apps, AI/ML solutions, FinTech platforms, and enterprise software for startups and enterprises worldwide.";
+  "CameeTo is a software development agency in Noida, India, building web apps, mobile apps, AI/ML solutions, FinTech platforms, and enterprise software for startups and enterprises worldwide.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

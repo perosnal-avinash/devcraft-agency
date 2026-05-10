@@ -3,7 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — CameeTo Agency",
-  description: "How CameeTo collects, uses, and protects your personal information.",
+  description: "Read CameeTo's privacy policy to understand how we collect, use, store, and protect your personal information and data rights.",
+  alternates: { canonical: "/privacy-policy" },
+  robots: { index: false, follow: false },
 };
 
 const p = (text: string) => (

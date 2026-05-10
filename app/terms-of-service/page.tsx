@@ -3,7 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Terms of Service — CameeTo Agency",
-  description: "The terms and conditions governing use of CameeTo's services.",
+  description: "Read CameeTo's terms of service outlining the conditions that govern your use of our software development services and website.",
+  alternates: { canonical: "/terms-of-service" },
+  robots: { index: false, follow: false },
 };
 
 const p = (text: string) => (

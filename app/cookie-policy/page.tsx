@@ -3,7 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Cookie Policy — CameeTo Agency",
-  description: "How CameeTo uses cookies and similar tracking technologies.",
+  description: "Learn how CameeTo uses cookies and similar tracking technologies to improve your browsing experience and personalise our services.",
+  alternates: { canonical: "/cookie-policy" },
+  robots: { index: false, follow: false },
 };
 
 const p = (text: string) => (

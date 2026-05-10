@@ -3,7 +3,9 @@ import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
   title: "NDA Template — CameeTo Agency",
-  description: "CameeTo's standard Non-Disclosure Agreement template for client engagements.",
+  description: "Download CameeTo's standard NDA template used to protect confidential information shared during software project engagements and partnerships.",
+  alternates: { canonical: "/nda-template" },
+  robots: { index: false, follow: false },
 };
 
 const p = (text: string) => (
